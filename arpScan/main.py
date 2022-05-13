@@ -9,7 +9,7 @@ def scan_sniff(pkt):
 
 def send_arp(ip):
 	packet = Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(psrc='12.168.1.106', pdst=ip)
-	res = srp(packet, timeout = 2, verbose = 0)
+	res = srp(packet, timeout = 1.5, verbose = 0)
 	res[0].summary(lambda s,r: r.sprintf("[*] %Ether.src% %ARP.psrc%"))
 	
 def active(range_ip, mode):
